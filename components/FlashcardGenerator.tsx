@@ -79,7 +79,7 @@ const FlashcardGenerator: React.FC<FlashcardGeneratorProps> = ({ document }) => 
         <button
           onClick={handleGenerate}
           disabled={isGenerating}
-          className="w-full bg-white hover:bg-gray-50 text-gray-800 py-4 px-6 rounded-2xl shadow-lg border border-white/60 transition-all font-bold group flex flex-col items-center justify-center min-h-[80px]"
+          className="w-full bg-white hover:bg-gray-50 text-gray-800 py-4 px-6 rounded-2xl shadow-lg border border-white/60 transition-all font-bold group flex flex-col items-center justify-center min-h-[80px] hover:scale-[1.02] active:scale-95"
         >
           {isGenerating ? (
             <div className="flex flex-col items-center w-full">
@@ -112,8 +112,8 @@ const FlashcardGenerator: React.FC<FlashcardGeneratorProps> = ({ document }) => 
                 onClick={() => setActiveSet(set)}
                 className={`w-full text-left p-4 rounded-2xl border transition-all duration-300 animate-slide-up ${
                   activeSet?.id === set.id
-                    ? 'bg-white border-purple-200 shadow-md scale-[1.02]'
-                    : 'bg-white/40 border-transparent hover:bg-white'
+                    ? 'bg-white border-purple-200 shadow-md scale-[1.02] active:scale-[0.98]'
+                    : 'bg-white/40 border-transparent hover:bg-white hover:shadow-md hover:scale-[1.02] active:scale-95'
                 }`}
                 style={{ animationDelay: `${idx * 50}ms` }}
               >
@@ -153,7 +153,7 @@ const FlashcardGenerator: React.FC<FlashcardGeneratorProps> = ({ document }) => 
             {/* Card Container */}
             <div className="relative w-full max-w-2xl aspect-[3/2] perspective-1000 group">
               <div 
-                className={`w-full h-full relative transition-all duration-700 preserve-3d cursor-pointer ${isFlipped ? 'rotate-y-180' : ''}`}
+                className={`w-full h-full relative transition-all duration-700 preserve-3d cursor-pointer hover:scale-[1.01] ${isFlipped ? 'rotate-y-180' : ''}`}
                 onClick={() => setIsFlipped(!isFlipped)}
               >
                  {/* Front */}

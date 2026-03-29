@@ -247,14 +247,18 @@ export const generateStudyNotes = async (doc: Document): Promise<Note> => {
     
     const prompt = `
       Act as an expert academic note-taker.
-      Your task is to create a **Comprehensive Master Study Guide** based STRICTLY on the provided document.
+      Your task is to create an **Exceptionally Deep and Detailed Master Study Guide** based STRICTLY on the provided document.
       
       **CRITICAL INSTRUCTION:**
       1. **Identify Structure:** First, scan the document to identify ALL distinct units, chapters, or main sections.
-      2. **Deep Content Extraction:** For EACH unit/chapter, generate comprehensive, deep study notes. Do not summarize; rewrite the content in full detail to capture all nuances.
-      3. **Strict Source Fidelity:** Use ONLY the information provided in the document. Do not add outside info.
-      4. **Original Flow:** Maintain the exact chronological order of topics and concepts as they appear in the document. Use the document's original wording where appropriate to ensure accuracy.
-      5. **Direct Formatting:** **DO NOT** use generic labels like "Explanation:", "Details:", "Breakdown:", or "Examples:". Instead, strictly use the **actual headings, sub-headings, and topics** found in the document as your structure.
+      2. **Deep Content Extraction:** For EACH unit/chapter, generate exceptionally comprehensive, deep study notes. Prioritize expanding on ideas and providing exhaustive explanations over conciseness.
+      3. **Elaborate Context:** Actively elaborate on the historical context, broader implications, and connections between concepts mentioned within the document.
+      4. **Strict Source Fidelity:** Use ONLY the information provided in the document. Do not add outside info.
+      5. **Original Flow:** Maintain the exact chronological order of topics and concepts as they appear in the document.
+      6. **Formatting Rules:**
+         - Use **full paragraphs** for definitions and detailed explanations.
+         - Use **bullet points** for key details, examples, and lists.
+         - **DO NOT** use generic labels like "Explanation:", "Details:", "Breakdown:", or "Examples:". Instead, strictly use the **actual headings, sub-headings, and topics** found in the document as your structure.
 
       **REQUIRED OUTPUT STRUCTURE (Markdown):**
 
@@ -265,11 +269,11 @@ export const generateStudyNotes = async (doc: Document): Promise<Note> => {
       ## [Unit/Chapter Number]: [Unit/Chapter Title]
 
       ### [Sub-topic / Section Heading]
-      (Write full, detailed paragraphs explaining this topic based on the text. Cover every point mentioned in this section of the document.)
+      (Write full, detailed paragraphs explaining this topic based on the text. Elaborate on historical context, implications, and connections to other concepts. Cover every point mentioned in this section of the document in depth.)
 
-      (If the document lists items, steps, or features, use bullet points:)
-      * [List item from text]
-      * [List item from text]
+      (If the document lists items, steps, or examples, use bullet points:)
+      * [List item/example from text]
+      * [List item/example from text]
 
       ### [Next Sub-topic / Section Heading]
       (Content...)
@@ -281,7 +285,7 @@ export const generateStudyNotes = async (doc: Document): Promise<Note> => {
       
       ## ✎ Vital Terminology
       (List key terms found in the text)
-      > ❞ **[Term]**: [Definition from text]
+      > ❞ **[Term]**: [Full paragraph definition from text]
     `;
 
     // Strategy: Try the Pro model first. If it fails due to quota, fallback to Flash.

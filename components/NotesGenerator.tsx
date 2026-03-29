@@ -460,8 +460,8 @@ const NotesGenerator: React.FC<NotesGeneratorProps> = ({ document }) => {
                 style={{ animationDelay: `${idx * 100}ms` }}
                 className={`w-full text-left p-4 rounded-2xl border transition-all duration-300 group animate-slide-up ${
                   activeNote?.id === note.id
-                    ? 'bg-white border-rose-200 shadow-md shadow-rose-100 scale-[1.02]'
-                    : 'bg-white/40 border-transparent hover:bg-white hover:shadow-sm'
+                    ? 'bg-white border-rose-200 shadow-md shadow-rose-100 scale-[1.02] active:scale-[0.98]'
+                    : 'bg-white/40 border-transparent hover:bg-white hover:shadow-md hover:scale-[1.02] active:scale-95'
                 }`}
               >
                 <div className="flex items-center gap-3 mb-1">

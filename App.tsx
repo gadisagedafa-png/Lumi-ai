@@ -141,7 +141,7 @@ const App: React.FC = () => {
                 <div 
                   key={doc.id} 
                   style={{ animationDelay: `${idx * 100}ms` }}
-                  className={`group relative bg-white/70 backdrop-blur-md rounded-[2.5rem] p-8 border transition-all cursor-pointer hover:shadow-xl hover:-translate-y-2 duration-300 animate-slide-up ${activeDocumentId === doc.id ? 'border-rose-400 ring-4 ring-rose-100 shadow-lg shadow-rose-100' : 'border-white/50 hover:border-rose-200'}`}
+                  className={`group relative bg-white/70 backdrop-blur-md rounded-[2.5rem] p-8 border transition-all cursor-pointer hover:shadow-xl hover:-translate-y-2 active:scale-[0.98] duration-300 animate-slide-up ${activeDocumentId === doc.id ? 'border-rose-400 ring-4 ring-rose-100 shadow-lg shadow-rose-100' : 'border-white/50 hover:border-rose-200'}`}
                   onClick={() => setActiveDocumentId(doc.id)}
                 >
                   <div className="flex items-start justify-between mb-6">
@@ -174,7 +174,7 @@ const App: React.FC = () => {
               
               <button 
                 onClick={() => setIsUploadOpen(true)}
-                className="bg-white/40 backdrop-blur-sm rounded-[2.5rem] p-6 border-2 border-dashed border-gray-300 hover:border-rose-400 hover:bg-rose-50/50 transition-all flex flex-col items-center justify-center text-gray-400 hover:text-rose-500 min-h-[240px] group animate-slide-up"
+                className="bg-white/40 backdrop-blur-sm rounded-[2.5rem] p-6 border-2 border-dashed border-gray-300 hover:border-rose-400 hover:bg-rose-50/50 transition-all flex flex-col items-center justify-center text-gray-400 hover:text-rose-500 min-h-[240px] group animate-slide-up hover:scale-[1.02] active:scale-[0.98]"
                 style={{ animationDelay: `${documents.length * 100}ms` }}
               >
                 <div className="w-16 h-16 rounded-full bg-white border-2 border-current flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-sm">
